@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seriagro</title>
+    <link rel="stylesheet" href="frontend/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Seriagro</h1>
+            </div>
+        </header>
+
+        <nav class="navbar">
+            <select id="menu-desplegable" class="menu-dropdown" onchange="cambiarSeccion()">
+                <option value="clientes">Clientes</option>
+                <option value="facturas">Facturas</option>
+                <option value="amortizaciones">Amortizaciones</option>
+                <option value="cartillas">Cartillas</option>
+            </select>
+        </nav>
+
+        <main>
+            <section id="clientes" class="section active">
+                <h2>Clientes</h2>
+                <p> Creación y busqueda en detalle de clientes </p>
+                <nav class="navbar">
+                    <button id="btn-vista1" class="nav-button" onclick="cambiarVista('Bclientes')">Buscar Cliente</button>
+                    <button id="btn-vista2" class="nav-button" onclick="cambiarVista('Cclientes')">Crear Cliente</button>
+                </nav>
+            </section>
+
+            <section id="facturas" class="section">
+                <h2>Facturas</h2>
+            </section>
+
+            <section id="amortizaciones" class="section">
+                <h2>Amortizaciones</h2>
+            </section>
+
+            <section id="cartillas" class="section">
+                <h2>Cartillas</h2>
+            </section>
+
+            <section id="Bclientes" class="section">
+                <h2>Detalles del Cliente</h2>
+                <p>Busqueda de un cliente a través del nombre o NIF/CIF.</p>
+                <form action="/submit" method="get">
+                    <div>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div>
+                        <label for="nif">NIF/CIF:</label>
+                        <input type="text" id="nif" name="nif" required>
+                    </div>
+                    <button type="submit">Buscar cliente</button>
+                </form>
+                <button class="btn" onclick="mostrarVista('clientes')">Volver a Clientes</button>
+            </section>
+    
+            <section id="Cclientes" class="section">
+                <h2>Creación de un nuevo cliente</h2>
+
+                <form id="ClientForm" class="card card-body">
+                    <div>
+                        <label for="nombre">Nombre Completo:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div>
+                        <label for="nif">NIF/CIF:</label>
+                        <input type="text" id="nif" name="nif" required>
+                    </div>
+                    <div>
+                        <label for="domicilio">Domicilio:</label>
+                        <input type="text" id="domicilio" name="domicilio">
+                    </div>
+                    <div>
+                        <label for="CP">Codigo Postal:</label>
+                        <input type="number" id="CP" name="CP">
+                    </div>
+                    <div>
+                        <label for="localidad">Localidad:</label>
+                        <input type="text" id="localidad" name="localidad">
+                    </div>
+                    <div>
+                        <label for="domicilio">Domicilio:</label>
+                        <input type="text" id="domicilio" name="domicilio">
+                    </div>
+                    <div>
+                        <label for="telefono">Telefono:</label>
+                        <input type="number" id="telefono" name="telefono">
+                    </div>
+                    <div>
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div>
+                        <label for="cuota">Cuota:</label>
+                        <select id="cuota" name="cuota" required>
+                            <option value="">Selecciona una cuota</option>
+                            <option value="0">SIN CUOTA</option>
+                            <option value="1">CUOTA 1</option>
+                            <option value="2">CUOTA 2</option>
+                            <option value="3">CUOTA 3</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="cuota">IVA:</label>
+                        <select id="cuota" name="cuota" required>
+                            <option value="">Selecciona tipo de IVA</option>
+                            <option value="0">0</option>
+                            <option value="21">21</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="comentarios">Comentarios:</label>
+                        <textarea id="comentarios" name="comentarios" rows="2"></textarea>
+                    </div>
+
+                    <button id="openModalBtn"> Crear cliente</button>
+
+                </form>
+
+                <button class="btn" onclick="mostrarVista('clientes')">Volver a Clientes</button>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; Seriagro S.L.</p>
+        </footer>
+    </div>
+
+
+<!-- Estructura del modal -->
+<div id="confirmationModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Confirmación</h2>
+        <p>¿Estás seguro de que deseas completar esta acción?</p>
+        <button id="confirmBtn">Sí, completar</button>
+        <button id="cancelBtn">Cancelar</button>
+    </div>
+</div>
+
+    <script src="./frontend/modals.js"></script>
+    <script src="./frontend/screens.js"></script>
+    <script src="./backend/scripts.js"></script>
+</body>
+</html>

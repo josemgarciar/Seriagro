@@ -1,0 +1,303 @@
+/* styles.css */
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #000; /* Fondo negro para la cabecera */
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Espacia los elementos a los extremos */
+    align-items: center; /* Centra verticalmente el contenido */
+}
+
+.header-image {
+    width: 50px; /* Ajusta el tamaño de la imagen */
+    height: 50px;
+    border-radius: 50%; /* Hace la imagen circular si lo deseas */
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #fff; /* Texto en blanco */
+}
+
+.navbar {
+    margin-bottom: 40px;
+}
+
+.menu-dropdown {
+    width: 100%;  /* El dropdown ocupa el ancho completo */
+    background-color: #fff;
+    border: none;
+    border-radius: 8px;
+    color: #333;
+    padding: 15px;
+    font-size: 1.1em;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para un look moderno */
+    appearance: none; /* Elimina la flecha por defecto del navegador */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+}
+
+.menu-dropdown:focus {
+    outline: none;
+    border: 2px solid #000000; /* Borde azul al seleccionar */
+}
+
+.menu-dropdown::after {
+    content: '▼'; 
+    font-size: 0.7em;
+    color: #55718f;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #38424c; 
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #888;
+}
+
+
+/* Navbar */
+.navbar {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    align-items: center;
+}
+
+/* Botones de navegación */
+.nav-button {
+    background-color: #3e4750;
+    color: white; /* Texto en blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    margin: 0 10px; /* Espaciado entre botones */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Manito al pasar el mouse */
+    font-size: 1em; /* Tamaño del texto */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Suave transición para color de fondo y transformación */
+}
+
+/* Efecto hover en los botones */
+.nav-button:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el cursor */
+    transform: scale(1.05); /* Pequeño agrandamiento al hacer hover */
+}
+
+/* Efecto para cuando el botón está enfocado o activo */
+.nav-button:focus, .nav-button:active {
+    outline: none; /* Sin borde al hacer click */
+    background-color: #004494; /* Fondo más oscuro cuando está activo */
+}
+
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    gap: 20px; /* Espacio entre los elementos */
+    width: 100%; /* Ocupa todo el ancho de la aplicación */
+    box-sizing: border-box; /* Asegura que el padding no aumente el ancho */
+    padding: 20px; /* Espacio interior alrededor del formulario */
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input, form select, form textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%; /* Asegura que los inputs ocupen el 100% del contenedor */
+    box-sizing: border-box; /* Asegura que el padding no aumente el ancho */
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form .btn {
+    grid-column: span 2; /* Hace que el botón ocupe ambas columnas */
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center; 
+}
+
+form .btn:hover {
+    background-color: #0056b3;
+}
+
+form .btn:active {
+    transform: scale(0.98);
+    background-color: #004080;
+}
+.btn {
+    padding: 10px 20px;
+    background-color: #3e4750;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.btn:active {
+    transform: scale(0.98);
+    background-color: #004080;
+}
+
+/* Botón general */
+button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: #3e4750; /* Verde */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo al pasar el mouse */
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo adicional para separación */
+form button {
+    margin-top: 20px; /* Separación superior */
+}
+
+/* Estilo específico para el botón de regresar */
+.btn {
+    margin-top: 30px; /* Más separación para este botón */
+}
+
+
+
+
+/* Estilos para el modal */
+/* Estilos básicos para el modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Posición fija */
+    z-index: 1; /* Se asegura de estar encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permite desplazarse si es necesario */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* Centrado vertical y horizontal */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ancho del 80% de la pantalla */
+    max-width: 500px; /* Máximo ancho */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+/* Botón de cerrar (X) */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilos para los botones */
+.modal-content button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#confirmBtn {
+    background-color: #28a745;
+    color: white;
+}
+
+#cancelBtn {
+    background-color: #dc3545;
+    color: white;
+}
